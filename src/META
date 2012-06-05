@@ -1,0 +1,10 @@
+# OASIS_START
+# DO NOT EDIT (digest: 5c7257f13b7cef98078cd8eee0f9e566)
+version = "0.1"
+description = "Submission tool on PBS cluster"
+requires = "lwt lwt.unix lwt.syntax"
+archive(byte) = "plumbery.cma"
+archive(native) = "plumbery.cmxa"
+exists_if = "plumbery.cma"
+# OASIS_STOP
+

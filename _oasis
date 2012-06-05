@@ -1,0 +1,27 @@
+OASISFormat: 0.3
+Name:        plumbery
+Version:     0.1
+Synopsis:    Submission tool on PBS cluster
+Authors:     Philippe Veber
+License:     GPL-3.0
+Plugins:     DevFiles (0.3), META (0.3)
+BuildTools:  ocamlbuild
+
+Library plumbery
+  Pack:			true
+  Path:			src
+  FindlibName:		plumbery
+  BuildDepends:		lwt, lwt.unix, lwt.syntax
+  Install:		true
+  Modules:		Env, Qsub, Worker, Main
+
+Executable test42
+  Path:			tests
+  MainIs:               test42.ml
+  Install:              false
+  CompiledObject:       native
+  Build$:           	flag(tests)
+  BuildDepends:         plumbery
+
+Test main
+  Command: $test42
