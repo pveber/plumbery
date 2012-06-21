@@ -11,6 +11,5 @@ module Make(E : Env.T) = struct
     let r = f x in
     Marshal.to_channel oc r [Marshal.Closures] ;
     flush oc ;
-    close_in ic ; 
-    close_out oc 
+    close_out oc
 end
